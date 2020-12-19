@@ -1,5 +1,5 @@
 def count_trees():
-    lines = open('data/day3.txt').readlines()
+    lines = open('input.txt').readlines()
     counter = 0
     for index, line in enumerate(lines):
         if line[(index * 3) % 31] == '#':
@@ -9,7 +9,7 @@ def count_trees():
 
 
 def count_trees2():
-    lines = open('data/day3.txt').readlines()
+    lines = open('input.txt').readlines()
     multiply = 1
     counter = [0] * 5
     for i in range(len(lines)):

@@ -29,7 +29,7 @@ def validate(dic):
 
 def count_valid_passports():
     counter = 0
-    lines = open('data/day4.txt').readlines()
+    lines = open('input.txt').readlines()
     i = 0
     while i < len(lines):
         dic = {}
@@ -49,7 +49,7 @@ def count_valid_passports():
 
 def count_valid_passports2():
     counter = 0
-    lines = open('data/day4.txt').readlines()
+    lines = open('input.txt').readlines()
     i = 0
     while i < len(lines):
         dic = {}

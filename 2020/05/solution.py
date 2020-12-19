@@ -1,5 +1,5 @@
 def get_tickets():
-    lines = open('data/day5.txt').readlines()
+    lines = open('input.txt').readlines()
     tickets = []
     for line in lines:
         seat_id = 0

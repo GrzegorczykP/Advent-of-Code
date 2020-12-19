@@ -1,5 +1,5 @@
 def find_number():
-    numbers = list(map(int, open('data/day1.txt').readlines()))
+    numbers = list(map(int, open('input.txt').readlines()))
     for i in numbers:
         for j in numbers:
             if i + j == 2020:
@@ -7,7 +7,7 @@ def find_number():
 
 
 def find_3number():
-    numbers = list(map(int, open('data/day1.txt').readlines()))
+    numbers = list(map(int, open('input.txt').readlines()))
     for i in numbers:
         for j in numbers:
             for k in numbers:

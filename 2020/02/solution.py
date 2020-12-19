@@ -1,6 +1,6 @@
 def count_valid_passwords():
     counter = 0
-    lines = open('data/day2.txt').readlines()
+    lines = open('input.txt').readlines()
     for line in lines:
         data = line.split()
         numbers = list(map(int, data[0].split('-')))
@@ -12,7 +12,7 @@ def count_valid_passwords():
 
 def count_valid_passwords2():
     counter = 0
-    lines = open('data/day2.txt').readlines()
+    lines = open('input.txt').readlines()
     for line in lines:
         data = line.split()
         numbers = list(map(int, data[0].split('-')))
