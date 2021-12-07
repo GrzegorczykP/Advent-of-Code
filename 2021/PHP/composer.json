@@ -1,0 +1,11 @@
+{
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Paweł Grzegorczyk"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "9.*"
+  }
+}
