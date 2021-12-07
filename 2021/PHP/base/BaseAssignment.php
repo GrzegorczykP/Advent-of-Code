@@ -16,7 +16,7 @@ abstract class BaseAssignment
 
     protected function loadData(): void
     {
-        $extension = $this->isTest ? '.test' : '.input';
+        $extension = $this->isTest ? '/test' : '/input';
 
         $this->inputData = file_get_contents($this->basePath . str_pad($this->day, 2, '0', STR_PAD_LEFT) . $extension);
     }
