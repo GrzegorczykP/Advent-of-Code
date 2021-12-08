@@ -26,4 +26,15 @@ class AdventOfCodeTest extends TestCase
         $this->assertArrayHasKey(1, $result);
         $this->assertEquals(900, $result[1]);
     }
+
+    public function testDay3(): void
+    {
+        $assignment = new Assignments\Day3(true);
+        $result = $assignment->run();
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey(0, $result);
+        $this->assertEquals(198, $result[0]);
+        $this->assertArrayHasKey(1, $result);
+        $this->assertEquals(230, $result[1]);
+    }
 }
