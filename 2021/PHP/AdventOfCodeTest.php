@@ -9,7 +9,10 @@ class AdventOfCodeTest extends TestCase
     {
         $assignment = new Assignments\Day1(true);
         $result = $assignment->run();
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey(0, $result);
         $this->assertEquals(7, $result[0]);
+        $this->assertArrayHasKey(1, $result);
         $this->assertEquals(5, $result[1]);
     }
 
@@ -17,7 +20,10 @@ class AdventOfCodeTest extends TestCase
     {
         $assignment = new Assignments\Day2(true);
         $result = $assignment->run();
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey(0, $result);
         $this->assertEquals(150, $result[0]);
+        $this->assertArrayHasKey(1, $result);
         $this->assertEquals(900, $result[1]);
     }
 }
