@@ -1,8 +1,10 @@
 <?php
 
-namespace Assignments;
+namespace App\Assignments;
 
-class Day5 extends \BaseAssignment
+use App\BaseAssignment;
+
+class Day5 extends BaseAssignment
 {
     private array $cleanedData;
     private int $maxX;

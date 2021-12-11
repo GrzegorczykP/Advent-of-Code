@@ -1,13 +1,19 @@
 <?php
-require_once __DIR__ . '/init.php';
 
+namespace Tests;
+
+use App\Assignments\Day1;
+use App\Assignments\Day2;
+use App\Assignments\Day3;
+use App\Assignments\Day4;
+use App\Assignments\Day5;
 use PHPUnit\Framework\TestCase;
 
 class AdventOfCodeTest extends TestCase
 {
     public function testDay1(): void
     {
-        $assignment = new Assignments\Day1(true);
+        $assignment = new Day1(true);
         $result = $assignment->run();
         $this->assertIsArray($result);
         $this->assertArrayHasKey(0, $result);
@@ -18,7 +24,7 @@ class AdventOfCodeTest extends TestCase
 
     public function testDay2(): void
     {
-        $assignment = new Assignments\Day2(true);
+        $assignment = new Day2(true);
         $result = $assignment->run();
         $this->assertIsArray($result);
         $this->assertArrayHasKey(0, $result);
@@ -29,7 +35,7 @@ class AdventOfCodeTest extends TestCase
 
     public function testDay3(): void
     {
-        $assignment = new Assignments\Day3(true);
+        $assignment = new Day3(true);
         $result = $assignment->run();
         $this->assertIsArray($result);
         $this->assertArrayHasKey(0, $result);
@@ -40,7 +46,7 @@ class AdventOfCodeTest extends TestCase
 
     public function testDay4(): void
     {
-        $assignment = new Assignments\Day4(true);
+        $assignment = new Day4(true);
         $result = $assignment->run();
         $this->assertIsArray($result);
         $this->assertArrayHasKey(0, $result);
@@ -51,7 +57,7 @@ class AdventOfCodeTest extends TestCase
 
     public function testDay5(): void
     {
-        $assignment = new Assignments\Day5(true);
+        $assignment = new Day5(true);
         $result = $assignment->run();
         $this->assertIsArray($result);
         $this->assertArrayHasKey(0, $result);

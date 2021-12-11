@@ -1,8 +1,10 @@
 <?php
 
-namespace Assignments;
+namespace App\Assignments;
 
-class Day2 extends \BaseAssignment
+use App\BaseAssignment;
+
+class Day2 extends BaseAssignment
 {
     private array $commands;
 

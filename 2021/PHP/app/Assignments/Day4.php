@@ -1,8 +1,8 @@
 <?php
 
-namespace Assignments;
+namespace App\Assignments;
 
-use BaseAssignment;
+use App\BaseAssignment;
 
 class Day4 extends BaseAssignment
 {

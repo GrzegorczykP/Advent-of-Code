@@ -1,8 +1,10 @@
 <?php
 
-namespace Assignments;
+namespace App\Assignments;
 
-class Day3 extends \BaseAssignment
+use App\BaseAssignment;
+
+class Day3 extends BaseAssignment
 {
     private array $rows;
 

@@ -5,8 +5,21 @@
       "name": "Paweł Grzegorczyk"
     }
   ],
+  "require": {
+    "php": ">=7.4"
+  },
   "require-dev": {
     "phpunit/phpunit": "9.*",
     "symfony/var-dumper": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
   }
 }
