@@ -1,6 +1,7 @@
 <?php
 
 spl_autoload_register(static function ($className) {
+    $className = str_replace('\\', DIRECTORY_SEPARATOR, $className);
     if (file_exists($className . '.php')) {
         require_once $className . '.php';
         return true;
