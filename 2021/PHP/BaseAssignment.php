@@ -2,7 +2,7 @@
 
 abstract class BaseAssignment
 {
-    protected string $basePath = __DIR__ . '/../../data/';
+    protected string $basePath = __DIR__ . '/../data/';
     protected string $inputData;
     protected int $day;
     protected bool $isTest;
