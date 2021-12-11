@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/base/init.php';
+require_once __DIR__ . '/init.php';
 
 use PHPUnit\Framework\TestCase;
 
