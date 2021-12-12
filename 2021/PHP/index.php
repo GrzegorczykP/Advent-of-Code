@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-$assigment = new App\Assignments\Day5();
+$assigment = new App\Assignments\Day6();
 $result = $assigment->run();
 
 echo 'Task 1: ' . $result[0] . '<br>';
