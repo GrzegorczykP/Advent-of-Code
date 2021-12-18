@@ -9,6 +9,7 @@ use App\Assignments\Day4;
 use App\Assignments\Day5;
 use App\Assignments\Day6;
 use App\Assignments\Day7;
+use App\Assignments\Day8;
 use PHPUnit\Framework\TestCase;
 
 class AdventOfCodeTest extends TestCase
@@ -88,5 +89,16 @@ class AdventOfCodeTest extends TestCase
         $this->assertEquals(37, $result[0]);
         $this->assertArrayHasKey(1, $result);
         $this->assertEquals(168, $result[1]);
+    }
+
+    public function testDay8(): void
+    {
+        $assignment = new Day8(true);
+        $result = $assignment->run();
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey(0, $result);
+        $this->assertEquals(26, $result[0]);
+        $this->assertArrayHasKey(1, $result);
+        $this->assertEquals(61229, $result[1]);
     }
 }
