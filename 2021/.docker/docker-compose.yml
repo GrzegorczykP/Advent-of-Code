@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  php-apache:
+    container_name: php-apache
+    build:
+      dockerfile: dockerfile
+    volumes:
+      - ../PHP:/var/www/html/
+      - ../data:/var/www/html/data/
+    ports:
+      - "8080:80"
