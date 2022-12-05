@@ -4,7 +4,7 @@ namespace App2021\Assignments;
 
 use App2021\BaseAssignment;
 
-class Day5 extends BaseAssignment
+final class Day5 extends BaseAssignment
 {
     private array $cleanedData;
     private int $maxX;

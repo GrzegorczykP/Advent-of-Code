@@ -4,7 +4,7 @@ namespace App2021\Assignments;
 
 use App2021\BaseAssignment;
 
-class Day8 extends BaseAssignment
+final class Day8 extends BaseAssignment
 {
     private array $parsedData;
     private array $numbersCodes = [

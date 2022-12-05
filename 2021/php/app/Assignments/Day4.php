@@ -4,7 +4,7 @@ namespace App2021\Assignments;
 
 use App2021\BaseAssignment;
 
-class Day4 extends BaseAssignment
+final class Day4 extends BaseAssignment
 {
     private array $numbers;
     private array $boards;
