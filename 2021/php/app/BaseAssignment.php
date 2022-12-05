@@ -1,8 +1,6 @@
 <?php
 
-namespace App;
-
-
+namespace App2021;
 abstract class BaseAssignment
 {
     protected string $basePath = __DIR__ . '/../../data/';

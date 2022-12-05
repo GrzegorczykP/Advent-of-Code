@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Assignments;
+namespace App2021\Assignments;
 
-use App\BaseAssignment;
+use App2021\BaseAssignment;
 
 class Day6 extends BaseAssignment
 {
