@@ -5,7 +5,6 @@ services:
     build:
       dockerfile: dockerfile
     volumes:
-      - ../PHP:/var/www/html/
-      - ../data:/var/www/html/data/
+      - ../:/var/www/html/
     ports:
       - "8080:80"
