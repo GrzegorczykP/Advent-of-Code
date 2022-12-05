@@ -17,7 +17,8 @@ final class Day1 extends \App2022\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1()
+            $this->run1(),
+            $this->run2()
         ];
     }
 
@@ -26,5 +27,14 @@ final class Day1 extends \App2022\BaseAssignment
         return collect($this->parsedData)
             ->map(fn($v) => array_sum($v))
             ->max();
+    }
+
+    private function run2(): int
+    {
+        return collect($this->parsedData)
+            ->map(fn($v) => array_sum($v))
+            ->sortDesc()
+            ->take(3)
+            ->sum();
     }
 }
