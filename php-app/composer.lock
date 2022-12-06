@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "55fe750d6fc0236b805a28100c6678ad",
+  "content-hash": "02bf36b9447e1d0193ca527fb75fc382",
   "packages": [
     {
       "name": "doctrine/instantiator",
@@ -78,16 +78,16 @@
     },
     {
       "name": "illuminate/collections",
-      "version": "v9.42.2",
+      "version": "v9.43.0",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/collections.git",
-        "reference": "dd78f942e2052743e8f290292e4f7a40ec96ca12"
+        "reference": "7a8afa0875d7de162f30865d9fae33c8fb235fa2"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/illuminate/collections/zipball/dd78f942e2052743e8f290292e4f7a40ec96ca12",
-        "reference": "dd78f942e2052743e8f290292e4f7a40ec96ca12",
+        "url": "https://api.github.com/repos/illuminate/collections/zipball/7a8afa0875d7de162f30865d9fae33c8fb235fa2",
+        "reference": "7a8afa0875d7de162f30865d9fae33c8fb235fa2",
         "shasum": ""
       },
       "require": {
@@ -129,11 +129,11 @@
         "issues": "https://github.com/laravel/framework/issues",
         "source": "https://github.com/laravel/framework"
       },
-      "time": "2022-11-25T07:58:11+00:00"
+      "time": "2022-12-02T18:48:05+00:00"
     },
     {
       "name": "illuminate/conditionable",
-      "version": "v9.42.2",
+      "version": "v9.43.0",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/conditionable.git",
@@ -179,7 +179,7 @@
     },
     {
       "name": "illuminate/contracts",
-      "version": "v9.42.2",
+      "version": "v9.43.0",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/contracts.git",
@@ -227,16 +227,16 @@
     },
     {
       "name": "illuminate/macroable",
-      "version": "v9.42.2",
+      "version": "v9.43.0",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/macroable.git",
-        "reference": "25a2c6dac2b7541ecbadef952702e84ae15f5354"
+        "reference": "e3bfaf6401742a9c6abca61b9b10e998e5b6449a"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/illuminate/macroable/zipball/25a2c6dac2b7541ecbadef952702e84ae15f5354",
-        "reference": "25a2c6dac2b7541ecbadef952702e84ae15f5354",
+        "url": "https://api.github.com/repos/illuminate/macroable/zipball/e3bfaf6401742a9c6abca61b9b10e998e5b6449a",
+        "reference": "e3bfaf6401742a9c6abca61b9b10e998e5b6449a",
         "shasum": ""
       },
       "require": {
@@ -269,7 +269,7 @@
         "issues": "https://github.com/laravel/framework/issues",
         "source": "https://github.com/laravel/framework"
       },
-      "time": "2022-02-01T14:44:21+00:00"
+      "time": "2022-08-09T13:29:29+00:00"
     },
     {
       "name": "myclabs/deep-copy",
@@ -2070,16 +2070,16 @@
     },
     {
       "name": "symfony/var-dumper",
-      "version": "v6.2.0",
+      "version": "v6.2.1",
       "source": {
         "type": "git",
         "url": "https://github.com/symfony/var-dumper.git",
-        "reference": "6228b11059d7b279be699682f164a107ba9a268d"
+        "reference": "1e7544c8698627b908657e5276854d52ab70087a"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/symfony/var-dumper/zipball/6228b11059d7b279be699682f164a107ba9a268d",
-        "reference": "6228b11059d7b279be699682f164a107ba9a268d",
+        "url": "https://api.github.com/repos/symfony/var-dumper/zipball/1e7544c8698627b908657e5276854d52ab70087a",
+        "reference": "1e7544c8698627b908657e5276854d52ab70087a",
         "shasum": ""
       },
       "require": {
@@ -2138,7 +2138,7 @@
         "dump"
       ],
       "support": {
-        "source": "https://github.com/symfony/var-dumper/tree/v6.2.0"
+        "source": "https://github.com/symfony/var-dumper/tree/v6.2.1"
       },
       "funding": [
         {
@@ -2154,7 +2154,7 @@
           "type": "tidelift"
         }
       ],
-      "time": "2022-11-28T13:41:56+00:00"
+      "time": "2022-12-03T22:32:58+00:00"
     },
     {
       "name": "theseer/tokenizer",
@@ -2214,12 +2214,12 @@
       "source": {
         "type": "git",
         "url": "https://github.com/Roave/SecurityAdvisories.git",
-        "reference": "ae7d78fff43ae2c157a04b71f21c58d5009629ba"
+        "reference": "5ff66815edb2a9cb060eed77daa81f20ae6ce5b4"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ae7d78fff43ae2c157a04b71f21c58d5009629ba",
-        "reference": "ae7d78fff43ae2c157a04b71f21c58d5009629ba",
+        "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5ff66815edb2a9cb060eed77daa81f20ae6ce5b4",
+        "reference": "5ff66815edb2a9cb060eed77daa81f20ae6ce5b4",
         "shasum": ""
       },
       "conflict": {
@@ -2277,7 +2277,7 @@
         "codeigniter4/shield": "= 1.0.0-beta",
         "codiad/codiad": "<=2.8.4",
         "composer/composer": "<1.10.26|>=2-alpha.1,<2.2.12|>=2.3,<2.3.5",
-        "concrete5/concrete5": "<9.1.3|>= 9.0.0RC1, < 9.1.3",
+        "concrete5/concrete5": "<=9.1.3|>= 9.0.0RC1, < 9.1.3",
         "concrete5/core": "<8.5.8|>=9,<9.1",
         "contao-components/mediaelement": ">=2.14.2,<2.21.1",
         "contao/contao": ">=4,<4.4.56|>=4.5,<4.9.18|>=4.10,<4.11.7|>=4.13,<4.13.3",
@@ -2750,7 +2750,7 @@
           "type": "tidelift"
         }
       ],
-      "time": "2022-12-05T19:04:07+00:00"
+      "time": "2022-12-06T16:04:33+00:00"
     }
   ],
   "aliases": [],
@@ -2761,7 +2761,7 @@
   "prefer-stable": false,
   "prefer-lowest": false,
   "platform": {
-    "php": "^7.4|^8.0"
+    "php": "^8.1"
   },
   "platform-dev": [],
   "plugin-api-version": "2.3.0"

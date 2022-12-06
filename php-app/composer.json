@@ -6,7 +6,7 @@
     }
   ],
   "require": {
-    "php": "^7.4|^8.0",
+    "php": "^8.1",
     "symfony/var-dumper": "^6.2",
     "phpunit/phpunit": "^9.5",
     "illuminate/collections": "^9.42"
