@@ -34,8 +34,8 @@
     <tr>
         <td>PHP</td>
         <td> * * </td>
-        <td>  </td>
-        <td>  </td>
+        <td> * * </td>
+        <td> * * </td>
         <td>  </td>
         <td>  </td>
         <td>  </td>

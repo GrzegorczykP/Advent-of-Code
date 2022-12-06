@@ -30,9 +30,5 @@ abstract class BaseAssignment
 
     abstract public function run(): array;
 
-    /**
-     * @param string $input
-     * @return mixed
-     */
     abstract public function parseInput(string $input): Collection;
 }
