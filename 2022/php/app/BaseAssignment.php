@@ -28,7 +28,7 @@ abstract class BaseAssignment
         $this->inputData = file_get_contents($this->basePath . str_pad($this->day, 2, '0', STR_PAD_LEFT) . $extension);
     }
 
-    abstract public function run(): array;
-
     abstract public function parseInput(string $input): Collection;
+
+    abstract public function run(): array;
 }
