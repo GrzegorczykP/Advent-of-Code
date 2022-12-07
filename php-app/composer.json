@@ -1,4 +1,6 @@
 {
+  "name": "AoC PHP app",
+  "description": "PHP app to resolve Advent of Code tasks",
   "license": "proprietary",
   "authors": [
     {
