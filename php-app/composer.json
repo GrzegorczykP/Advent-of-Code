@@ -20,5 +20,8 @@
       "App2022\\": "../2022/php/app",
       "Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
   }
 }
