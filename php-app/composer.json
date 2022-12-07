@@ -1,4 +1,6 @@
 {
+  "name": "grzegorczykp/aoc-php",
+  "description": "PHP app to resolve Advent of Code tasks",
   "license": "proprietary",
   "authors": [
     {
@@ -20,5 +22,8 @@
       "App2022\\": "../2022/php/app",
       "Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit tests/"
   }
 }
