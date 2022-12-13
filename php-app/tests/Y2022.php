@@ -71,4 +71,15 @@ final class Y2022 extends TestCase
         $this->assertArrayHasKey(1, $result);
         $this->assertEquals(19, $result[1]);
     }
+
+    public function testDay7(): void
+    {
+        $assignment = new \App2022\Assignments\Day7(true);
+        $result = $assignment->run();
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey(0, $result);
+        $this->assertEquals(95437, $result[0]);
+        $this->assertArrayHasKey(1, $result);
+        $this->assertEquals(24933642, $result[1]);
+    }
 }
