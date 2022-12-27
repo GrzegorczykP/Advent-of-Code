@@ -15,14 +15,14 @@ final class Day8 extends BaseAssignment
     public function parseInput(string $input): Collection
     {
         return collect(explode(PHP_EOL, $input))
-            ->map(fn($row) => str_split($row));
+            ->map(fn($row) => array_map('intval', str_split($row)));
     }
 
     public function run(): array
     {
         return [
             $this->run1(),
-//            $this->run2(),
+            $this->run2(),
         ];
     }
 
@@ -66,11 +66,59 @@ final class Day8 extends BaseAssignment
 
     private function run2(): int
     {
-        return 0;
+        $size = $this->parsedData->count();
+        $max = 0;
+        for ($i = 0; $i < $size; $i++) {
+            for ($j = 0; $j < $size; $j++) {
+                $score = $this->calcScenicScore($i, $j);
+                if ($score > $max) {
+                    $max = $score;
+                }
+            }
+        }
+
+        return $max;
     }
 
     private function printMap(array $map): never
     {
         dd(implode(PHP_EOL, array_map(fn($v) => implode('|', $v), $map)));
+    }
+
+    private function calcScenicScore(int $x, int $y): int
+    {
+        $mapSize = $this->parsedData->count() - 1;
+
+        if (min($x, $y) === 0 || max($x, $y) === $mapSize) {
+            return 0;
+        }
+
+        $treeHeight = $this->parsedData[$y][$x];
+
+        $lView = 1;
+        $cord = $x;
+        while (--$cord > 0 && $treeHeight > $this->parsedData[$y][$cord]) {
+            $lView++;
+        }
+
+        $rView = 1;
+        $cord = $x;
+        while (++$cord < $mapSize && $treeHeight > $this->parsedData[$y][$cord]) {
+            $rView++;
+        }
+
+        $tView = 1;
+        $cord = $y;
+        while (--$cord > 0 && $treeHeight > $this->parsedData[$cord][$x]) {
+            $tView++;
+        }
+
+        $bView = 1;
+        $cord = $y;
+        while (++$cord < $mapSize && $treeHeight > $this->parsedData[$cord][$x]) {
+            $bView++;
+        }
+
+        return $tView * $bView * $lView * $rView;
     }
 }

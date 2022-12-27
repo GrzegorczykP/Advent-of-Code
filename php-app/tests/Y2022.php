@@ -90,7 +90,7 @@ final class Y2022 extends TestCase
         $this->assertIsArray($result);
         $this->assertArrayHasKey(0, $result);
         $this->assertEquals(21, $result[0]);
-//        $this->assertArrayHasKey(1, $result);
-//        $this->assertEquals(8, $result[1]);
+        $this->assertArrayHasKey(1, $result);
+        $this->assertEquals(8, $result[1]);
     }
 }
