@@ -12,8 +12,8 @@ final class Y2023 extends TestCase
         $result = $assignment->run();
         $this->assertIsArray($result);
         $this->assertArrayHasKey(0, $result);
-        $this->assertEquals(142, $result[0]);
-//        $this->assertArrayHasKey(1, $result);
-//        $this->assertEquals(45000, $result[1]);
+        $this->assertEquals(209, $result[0]);
+        $this->assertArrayHasKey(1, $result);
+        $this->assertEquals(281, $result[1]);
     }
 }
