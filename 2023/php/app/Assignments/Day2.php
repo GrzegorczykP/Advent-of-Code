@@ -40,7 +40,7 @@ final class Day2 extends \App2023\BaseAssignment
     {
         return [
             $this->run1(),
-//            $this->run2()
+            $this->run2()
         ];
     }
 
@@ -66,6 +66,11 @@ final class Day2 extends \App2023\BaseAssignment
 
     private function run2(): int
     {
-
+        return $this->parsedData
+            ->map(function (array $game) {
+                $sets = collect($game['sets']);
+                return $sets->max('red') * $sets->max('green') * $sets->max('blue');
+            })
+            ->sum();
     }
 }
