@@ -9,11 +9,11 @@
   ],
   "require": {
     "php": "^8.2",
-    "symfony/var-dumper": "^6.2",
-    "phpunit/phpunit": "^9.5",
     "illuminate/collections": "^9.42"
   },
   "require-dev": {
+    "symfony/var-dumper": "^6.2",
+    "phpunit/phpunit": "^9.5",
     "roave/security-advisories": "dev-latest"
   },
   "autoload": {
