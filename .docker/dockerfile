@@ -1,4 +1,32 @@
-FROM php:8.2-apache
-RUN apt-get update && apt-get upgrade -y
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
+FROM php:8.4-cli-alpine
+
+ARG COMPOSER_VERSION="2.7.7"
+ARG COMPOSER_SUM="aab940cd53d285a54c50465820a2080fcb7182a4ba1e5f795abfb10414a4b4be"
+
+RUN set -eux \
+\
+    # Dependencies
+    && apk add --no-cache --virtual .build-deps \
+    $PHPIZE_DEPS \
+    binutils \
+    linux-headers \
+\
+    # Xdebug
+    && pecl install -o xdebug \
+    && docker-php-ext-enable xdebug \
+\
+    # Composer
+        && curl -LO "https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar" \
+        && echo "${COMPOSER_SUM}  composer.phar" | sha256sum -c - \
+        && chmod +x composer.phar \
+        && mv composer.phar /usr/local/bin/composer \
+\
+    # Shrink binaries
+        && (find /usr/local/bin -type f -print0 | xargs -n1 -0 strip --strip-all -p 2>/dev/null || true) \
+        && (find /usr/local/lib -type f -print0 | xargs -n1 -0 strip --strip-all -p 2>/dev/null || true) \
+        && (find /usr/local/sbin -type f -print0 | xargs -n1 -0 strip --strip-all -p 2>/dev/null || true) \
+\
+    # Cleanup
+    && apk del .build-deps
+
+WORKDIR /app
