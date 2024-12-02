@@ -19,19 +19,20 @@ final class Day2 extends \App2023\BaseAssignment
                 $sets = explode('; ', $matches['sets']);
                 $out = [
                     'ID' => (int)$matches['ID'],
-                    'sets' => []
+                    'sets' => [],
                 ];
                 foreach ($sets as $key => $set) {
                     $out['sets'][$key] = [
                         'red' => 0,
                         'green' => 0,
-                        'blue' => 0
+                        'blue' => 0,
                     ];
                     preg_match_all('/(?<number>\d+) (?<color>\w+)/', $set, $matches, PREG_SET_ORDER);
                     foreach ($matches as $match) {
                         $out['sets'][$key][$match['color']] = (int)$match['number'];
                     }
                 }
+
                 return $out;
             });
     }
@@ -40,7 +41,7 @@ final class Day2 extends \App2023\BaseAssignment
     {
         return [
             $this->run1(),
-            $this->run2()
+            $this->run2(),
         ];
     }
 
@@ -59,6 +60,7 @@ final class Day2 extends \App2023\BaseAssignment
                         return false;
                     }
                 }
+
                 return true;
             })
             ->sum('ID');
@@ -69,6 +71,7 @@ final class Day2 extends \App2023\BaseAssignment
         return $this->parsedData
             ->map(function (array $game) {
                 $sets = collect($game['sets']);
+
                 return $sets->max('red') * $sets->max('green') * $sets->max('blue');
             })
             ->sum();

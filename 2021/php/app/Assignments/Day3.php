@@ -18,7 +18,7 @@ final class Day3 extends BaseAssignment
     {
         return [
             $this->run1(),
-            $this->run2()
+            $this->run2(),
         ];
     }
 
@@ -30,6 +30,7 @@ final class Day3 extends BaseAssignment
             foreach ($carry as $key => &$bitCount) {
                 $bitCount += (int)$item[$key];
             }
+
             return $carry;
         }, array_fill(0, strlen($this->rows[0]), 0));
 
@@ -56,18 +57,20 @@ final class Day3 extends BaseAssignment
             if ($halfO2 >= 1) {
                 $countedBitsO2 = array_reduce($o2, static function ($carry, $item) use ($depth) {
                     $carry += (int)$item[$depth];
+
                     return $carry;
                 });
-                $o2 = array_filter($o2, static fn($item) => $item[$depth] === ($countedBitsO2 >= $halfO2 ? '1' : '0'));
+                $o2 = array_filter($o2, static fn ($item) => $item[$depth] === ($countedBitsO2 >= $halfO2 ? '1' : '0'));
             }
 
             $halfCO2 = count($co2) / 2;
             if ($halfCO2 >= 1) {
                 $countedBitsCO2 = array_reduce($co2, static function ($carry, $item) use ($depth) {
                     $carry += (int)$item[$depth];
+
                     return $carry;
                 });
-                $co2 = array_filter($co2, static fn($item) => $item[$depth] === ($countedBitsCO2 >= $halfCO2 ? '0' : '1'));
+                $co2 = array_filter($co2, static fn ($item) => $item[$depth] === ($countedBitsCO2 >= $halfCO2 ? '0' : '1'));
             }
             $depth++;
         } while ($halfO2 >= 1 || $halfCO2 >= 1);

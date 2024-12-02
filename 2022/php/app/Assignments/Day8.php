@@ -15,7 +15,7 @@ final class Day8 extends BaseAssignment
     public function parseInput(string $input): Collection
     {
         return collect(explode(PHP_EOL, $input))
-            ->map(fn($row) => array_map('intval', str_split($row)));
+            ->map(fn ($row) => array_map('intval', str_split($row)));
     }
 
     public function run(): array
@@ -36,11 +36,11 @@ final class Day8 extends BaseAssignment
         for ($i = 0; $i < $n; $i++) {
             for (
                 $j = 0, $maxL = -1, $maxT = -1, $maxR = -1, $maxB = -1; $j < $n && min(
-                $maxL,
-                $maxT,
-                $maxR,
-                $maxB
-            ) < 9; $j++
+                    $maxL,
+                    $maxT,
+                    $maxR,
+                    $maxB
+                ) < 9; $j++
             ) {
                 if ($this->parsedData[$i][$j] > $maxL) {
                     $visibilityMap[$i][$j]++;
@@ -82,7 +82,7 @@ final class Day8 extends BaseAssignment
 
     private function printMap(array $map): never
     {
-        dd(implode(PHP_EOL, array_map(fn($v) => implode('|', $v), $map)));
+        dd(implode(PHP_EOL, array_map(fn ($v) => implode('|', $v), $map)));
     }
 
     private function calcScenicScore(int $x, int $y): int

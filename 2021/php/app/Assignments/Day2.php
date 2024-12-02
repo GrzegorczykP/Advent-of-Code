@@ -20,7 +20,7 @@ final class Day2 extends BaseAssignment
     {
         return [
             $this->run1(),
-            $this->run2()
+            $this->run2(),
         ];
     }
 
@@ -32,15 +32,19 @@ final class Day2 extends BaseAssignment
             switch ($direction) {
                 case 'forward':
                     $position += $units;
+
                     break;
                 case 'up':
                     $depth -= $units;
+
                     break;
                 case 'down':
                     $depth += $units;
+
                     break;
             }
         }
+
         return $position * $depth;
     }
 
@@ -54,15 +58,19 @@ final class Day2 extends BaseAssignment
                 case 'forward':
                     $position += $units;
                     $depth += $units * $aim;
+
                     break;
                 case 'up':
                     $aim -= $units;
+
                     break;
                 case 'down':
                     $aim += $units;
+
                     break;
             }
         }
+
         return $position * $depth;
     }
 }

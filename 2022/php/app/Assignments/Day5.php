@@ -37,8 +37,8 @@ final class Day5 extends \App2022\BaseAssignment
         }
 
         $out['containers'] = array_map(
-            static fn($v) => array_reverse(
-                array_filter($v, static fn($v) => $v !== ' ')
+            static fn ($v) => array_reverse(
+                array_filter($v, static fn ($v) => $v !== ' ')
             ),
             $out['containers']
         );
@@ -66,6 +66,7 @@ final class Day5 extends \App2022\BaseAssignment
         foreach ($containers as $container) {
             $out .= array_pop($container);
         }
+
         return $out;
     }
 
@@ -81,6 +82,7 @@ final class Day5 extends \App2022\BaseAssignment
         foreach ($containers as $container) {
             $out .= array_pop($container);
         }
+
         return $out;
     }
 }

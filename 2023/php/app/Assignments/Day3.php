@@ -38,13 +38,15 @@ final class Day3 extends \App2023\BaseAssignment
                     foreach ($searchLines as $searchLine) {
                         $value = $position - 1;
                         $part = substr($searchLine, max($value, 0), strlen($number) + ($value < 0 ? 1 : 2));
-                        if (preg_match('/[^\d.]/', $part)){
+                        if (preg_match('/[^\d.]/', $part)) {
                             $validNumbers[] = $number;
+
                             break;
                         }
                     }
                     $offset = $position + strlen($number);
                 }
+
                 return $validNumbers;
             })
             ->flatten()
@@ -56,6 +58,7 @@ final class Day3 extends \App2023\BaseAssignment
         return $this->parsedData
             ->map(function (array $game) {
                 $sets = collect($game['sets']);
+
                 return $sets->max('red') * $sets->max('green') * $sets->max('blue');
             })
             ->sum();

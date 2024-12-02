@@ -7,6 +7,7 @@ use App2021\BaseAssignment;
 final class Day8 extends BaseAssignment
 {
     private array $parsedData;
+
     private array $numbersCodes = [
         0 => 'abcefg',
         1 => 'cf',
@@ -50,9 +51,11 @@ final class Day8 extends BaseAssignment
             array_filter(
                 array_count_values(
                     array_map('strlen', $this->numbersCodes)
-                ), static function ($item) {
-                return $item === 1;
-            })
+                ),
+                static function ($item) {
+                    return $item === 1;
+                }
+            )
         );
 
         $counter = 0;
@@ -64,6 +67,7 @@ final class Day8 extends BaseAssignment
                 }
             }
         }
+
         return $counter;
     }
 }

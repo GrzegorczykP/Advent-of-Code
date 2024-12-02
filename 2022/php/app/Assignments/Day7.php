@@ -20,7 +20,8 @@ final class Day7 extends BaseAssignment
                 if ($tok[1] === 'cd') {
                     $path = match ($tok[2]) {
                         '/' => 'root/',
-                        '..' => (strrpos($path, '/', -1) === false ?
+                        '..' => (
+                            strrpos($path, '/', -1) === false ?
                             'root/' :
                             substr($path, 0, strrpos($path, '/', -1) - 1)
                         ),
@@ -46,6 +47,7 @@ final class Day7 extends BaseAssignment
                 }
             }
         }
+
         return collect($totals);
     }
 
@@ -59,14 +61,15 @@ final class Day7 extends BaseAssignment
 
     private function run1(): int
     {
-        return $this->parsedData->where(fn($v) => $v < 100000)->sum();
+        return $this->parsedData->where(fn ($v) => $v < 100000)->sum();
     }
 
     private function run2(): int
     {
         $availSpace = 70_000_000 - $this->parsedData->first();
+
         return $this->parsedData
             ->sort()
-            ->first(fn($v) => $availSpace + $v >= 30_000_000);
+            ->first(fn ($v) => $availSpace + $v >= 30_000_000);
     }
 }

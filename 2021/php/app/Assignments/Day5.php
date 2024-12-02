@@ -7,7 +7,9 @@ use App2021\BaseAssignment;
 final class Day5 extends BaseAssignment
 {
     private array $cleanedData;
+
     private int $maxX;
+
     private int $maxY;
 
     public function __construct(bool $isTest = false, int $day = 5)
@@ -15,9 +17,10 @@ final class Day5 extends BaseAssignment
         parent::__construct($isTest, $day);
         $this->cleanedData = array_map(static function ($row) {
             $coords = explode(' -> ', $row);
+
             return [
                 array_map('intval', explode(',', $coords[0])),
-                array_map('intval', explode(',', $coords[1]))
+                array_map('intval', explode(',', $coords[1])),
             ];
         }, explode(PHP_EOL, $this->inputData));
 

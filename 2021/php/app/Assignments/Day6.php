@@ -18,7 +18,7 @@ final class Day6 extends BaseAssignment
     {
         return [
             $this->smartSimulate(80),
-            $this->smartSimulate(256)
+            $this->smartSimulate(256),
         ];
     }
 
@@ -51,6 +51,7 @@ final class Day6 extends BaseAssignment
                 $grouped[$i] = 0;
             }
         }
+
         return $grouped;
     }
 
@@ -70,4 +71,3 @@ final class Day6 extends BaseAssignment
         return count($this->fishes);
     }
 }
-

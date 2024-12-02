@@ -32,6 +32,7 @@ final class Day3 extends BaseAssignment
             $out[chr($i + 96)] = $i;
             $out[chr($i + 64)] = $i + 26;
         }
+
         return $out;
     }
 
@@ -43,10 +44,11 @@ final class Day3 extends BaseAssignment
             ->map(function ($row) {
                 $split = collect(str_split($row));
                 $halfIndex = $split->count() / 2;
+
                 return $split->chunk($halfIndex);
             })
             ->reduce(
-                fn(int $sum, Collection $v): int => $sum + $priorityMap[$v[0]->intersect($v[1])->first()],
+                fn (int $sum, Collection $v): int => $sum + $priorityMap[$v[0]->intersect($v[1])->first()],
                 0
             );
     }
@@ -56,11 +58,12 @@ final class Day3 extends BaseAssignment
         $priorityMap = $this->getPriorityMap();
 
         return $this->parsedData
-            ->map(fn($row) => str_split($row))
+            ->map(fn ($row) => str_split($row))
             ->chunk(3)
             ->reduce(
                 function (int $sum, Collection $v) use ($priorityMap): int {
                     $shared = array_reverse(array_intersect(...$v->toArray()));
+
                     return $sum + $priorityMap[array_pop($shared)];
                 },
                 0

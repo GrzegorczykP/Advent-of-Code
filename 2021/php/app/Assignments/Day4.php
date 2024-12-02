@@ -7,6 +7,7 @@ use App2021\BaseAssignment;
 final class Day4 extends BaseAssignment
 {
     private array $numbers;
+
     private array $boards;
 
     public function __construct(bool $isTest = false, int $day = 4)
@@ -50,7 +51,7 @@ final class Day4 extends BaseAssignment
 
         return [
             $result[array_key_first($result)],
-            $result[array_key_last($result)]
+            $result[array_key_last($result)],
         ];
     }
 }

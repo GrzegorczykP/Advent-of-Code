@@ -10,6 +10,7 @@ final class Day1 extends \App2024\BaseAssignment
      * @var Collection{left: Collection<int>, right: Collection<int>}
      */
     protected Collection $parsedData;
+
     public function __construct(bool $isTest = false, int $day = 1)
     {
         parent::__construct($isTest, $day);
@@ -35,7 +36,7 @@ final class Day1 extends \App2024\BaseAssignment
     {
         return [
             $this->run1(),
-            $this->run2()
+            $this->run2(),
         ];
     }
 
@@ -45,14 +46,14 @@ final class Day1 extends \App2024\BaseAssignment
         $rightSorted = $this->parsedData['right']->sort()->values();
 
         return $leftSorted
-            ->reduce(fn(int $sum, int $v, int $i): int => $sum + abs($v - $rightSorted[$i]), 0);
+            ->reduce(fn (int $sum, int $v, int $i): int => $sum + abs($v - $rightSorted[$i]), 0);
     }
 
     private function run2(): int|string
     {
         $countLeft = $this->parsedData['left']->countBy();
         $countRight = $this->parsedData['right']
-            ->filter(fn(int $v): bool => $countLeft->keys()->contains($v))
+            ->filter(fn (int $v): bool => $countLeft->keys()->contains($v))
             ->countBy();
 
         return $countLeft

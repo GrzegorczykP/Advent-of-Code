@@ -18,7 +18,7 @@ final class Day1 extends BaseAssignment
     {
         return [
             $this->run1(),
-            $this->run2()
+            $this->run2(),
         ];
     }
 
@@ -32,6 +32,7 @@ final class Day1 extends BaseAssignment
                 $inc++;
             }
         }
+
         return $inc;
     }
 
@@ -41,12 +42,13 @@ final class Day1 extends BaseAssignment
         $inc = 0;
 
         for ($i = 3; $i < $dataCount; $i++) {
-            $sumA = $this->parsedData[$i-1] + $this->parsedData[$i-2] + $this->parsedData[$i-3];
-            $sumB = $this->parsedData[$i] + $this->parsedData[$i-1] + $this->parsedData[$i-2];
+            $sumA = $this->parsedData[$i - 1] + $this->parsedData[$i - 2] + $this->parsedData[$i - 3];
+            $sumB = $this->parsedData[$i] + $this->parsedData[$i - 1] + $this->parsedData[$i - 2];
             if ($sumA < $sumB) {
                 $inc++;
             }
         }
+
         return $inc;
     }
 }

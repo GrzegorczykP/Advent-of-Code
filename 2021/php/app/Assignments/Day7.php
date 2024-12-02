@@ -18,13 +18,14 @@ final class Day7 extends BaseAssignment
     {
         return [
             $this->run1(),
-            $this->run2()
+            $this->run2(),
         ];
     }
 
     private function run1(): int
     {
         $median = round($this->getMedian());
+
         return $this->calcCost($median);
     }
 
@@ -38,6 +39,7 @@ final class Day7 extends BaseAssignment
         } else {
             $median = ($this->positions[$index - 1] + $this->positions[$index]) / 2;
         }
+
         return $median;
     }
 
@@ -54,6 +56,7 @@ final class Day7 extends BaseAssignment
             if ($dist === 0) {
                 return 0;
             }
+
             return array_sum(range(1, $dist));
         }, $this->positions));
     }
@@ -61,15 +64,17 @@ final class Day7 extends BaseAssignment
     private function run2(): int
     {
         $average = floor($this->getAverage());
+
         return min([
             $this->calcCost($average, false),
-            $this->calcCost($average + 1, false)
+            $this->calcCost($average + 1, false),
         ]);
     }
 
     private function getAverage(): float
     {
         $count = count($this->positions);
+
         return array_sum($this->positions) / $count;
     }
 }

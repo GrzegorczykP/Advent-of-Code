@@ -1,3 +1,4 @@
 .idea
+.vscode
 /php-app/.phpunit.cache
 /.phpunit.result.cache

@@ -7,25 +7,41 @@
       "name": "Paweł Grzegorczyk"
     }
   ],
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "platform": {
+      "php": "8.4.1"
+    }
+  },
   "require": {
     "php": "^8.4",
+    "ext-curl": "*",
     "illuminate/collections": "^11.34.2"
   },
   "require-dev": {
     "symfony/var-dumper": "^7.2",
     "phpunit/phpunit": "^11.4.4",
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "friendsofphp/php-cs-fixer": "^3.65"
   },
   "autoload": {
     "psr-4": {
       "App2021\\": "../2021/php/app",
       "App2022\\": "../2022/php/app",
       "App2023\\": "../2023/php/app",
-      "App2024\\": "../2024/php/app",
+      "App2024\\": "../2024/php/app"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
       "Tests\\": "tests/"
     }
   },
   "scripts": {
+    "cs": "php-cs-fixer fix --config .php-cs-fixer.dist.php --dry-run --diff",
+    "cs:fix": "php-cs-fixer fix --config .php-cs-fixer.dist.php",
     "test": "vendor/bin/phpunit -c ./phpunit.xml"
   }
 }

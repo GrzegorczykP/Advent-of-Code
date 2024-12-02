@@ -33,7 +33,7 @@ final class Day1 extends \App2023\BaseAssignment
     {
         return [
             $this->run1(),
-            $this->run2()
+            $this->run2(),
         ];
     }
 
@@ -42,7 +42,8 @@ final class Day1 extends \App2023\BaseAssignment
         return $this->parsedData
             ->map(function ($line) {
                 $v = mb_str_split($line);
-                return (int)Arr::first($v, fn($v) => is_numeric($v)) . Arr::last($v, fn($v) => is_numeric($v));
+
+                return (int)Arr::first($v, fn ($v) => is_numeric($v)) . Arr::last($v, fn ($v) => is_numeric($v));
             })
             ->sum();
     }
@@ -62,7 +63,8 @@ final class Day1 extends \App2023\BaseAssignment
                     }
                 }
                 $v = mb_str_split($parsed);
-                return (int)Arr::first($v, fn($v) => is_numeric($v)) . Arr::last($v, fn($v) => is_numeric($v));
+
+                return (int)Arr::first($v, fn ($v) => is_numeric($v)) . Arr::last($v, fn ($v) => is_numeric($v));
             })
             ->sum();
     }

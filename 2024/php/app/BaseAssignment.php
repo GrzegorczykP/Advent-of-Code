@@ -7,10 +7,13 @@ use Illuminate\Support\Collection;
 abstract class BaseAssignment
 {
     private string $basePath = __DIR__ . '/../../data/';
+
     private int $day;
+
     private bool $isTest;
 
     protected string $inputData;
+
     protected Collection $parsedData;
 
     public function __construct(bool $isTest = false, int $day = 0)
