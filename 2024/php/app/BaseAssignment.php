@@ -14,7 +14,7 @@ abstract class BaseAssignment
 
     protected string $inputData;
 
-    protected Collection $parsedData;
+    protected readonly ?Collection $parsedData;
 
     public function __construct(bool $isTest = false, int $day = 0)
     {
@@ -31,7 +31,7 @@ abstract class BaseAssignment
         $this->inputData = file_get_contents($this->basePath . str_pad($this->day, 2, '0', STR_PAD_LEFT) . $extension);
     }
 
-    abstract public function parseInput(string $input): Collection;
+    abstract public function parseInput(string $input): ?Collection;
 
     abstract public function run(): array;
 }

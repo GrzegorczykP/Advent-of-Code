@@ -4,13 +4,11 @@ namespace App2024\Assignments;
 
 use Illuminate\Support\Collection;
 
+/**
+ * @property Collection{left: Collection<int>, right: Collection<int>} $parsedData
+ */
 final class Day1 extends \App2024\BaseAssignment
 {
-    /**
-     * @var Collection{left: Collection<int>, right: Collection<int>}
-     */
-    protected Collection $parsedData;
-
     public function __construct(bool $isTest = false, int $day = 1)
     {
         parent::__construct($isTest, $day);
