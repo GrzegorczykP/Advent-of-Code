@@ -2,6 +2,8 @@
 
 namespace App2024\Assignments;
 
+use Illuminate\Support\Str;
+
 final class Day3 extends \App2024\BaseAssignment
 {
     public function __construct(bool $isTest = false, int $day = 3)
@@ -24,11 +26,12 @@ final class Day3 extends \App2024\BaseAssignment
 
     private function run1(): int|string
     {
-        preg_match_all('/mul\((?<first>\d+),(?<second>\d+)\)/', $this->inputData, $matches);
-
-        return collect($matches['first'])
-            ->zip($matches['second'])
-            ->sum(fn ($v) => (int)$v[0] * (int)$v[1]);
+        return Str::of($this->inputData)
+            ->matchAll('/mul\((\d+,\d+)\)/')
+            ->sum(function (string $v) {
+                $params = explode(',', $v);
+                return $params[0] * $params[1];
+            });
     }
 
     private function run2(): int|string
@@ -44,10 +47,11 @@ final class Day3 extends \App2024\BaseAssignment
             }
         }
 
-        preg_match_all('/mul\((?<first>\d+),(?<second>\d+)\)/', implode('xxx', $res), $matches);
-
-        return collect($matches['first'])
-            ->zip($matches['second'])
-            ->sum(fn ($v) => (int)$v[0] * (int)$v[1]);
+        return Str::of(implode('', $res))
+            ->matchAll('/mul\((\d+,\d+)\)/')
+            ->sum(function (string $v) {
+                $params = explode(',', $v);
+                return $params[0] * $params[1];
+            });
     }
 }
