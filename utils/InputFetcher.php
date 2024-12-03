@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 class InputFetcher
@@ -111,6 +112,7 @@ class InputFetcher
         if (empty($example)) {
             throw new RuntimeException("No example found in the task page");
         }
+        $example = preg_replace('/<\/?em>/i', '', $example);
 
         return $this->saveExample($example, $dayDir);
     }
@@ -135,7 +137,7 @@ if (PHP_SAPI !== 'cli') {
 }
 
 if ($argc < 2) {
-    die("Usage: php run.php <year/day> [--test]\n");
+    die("Usage: php InputFetcher.php <year/day>\n");
 }
 
 preg_match('#(?<year>\d{4})/(?<day>\d{1,2})#', $argv[1], $matches);

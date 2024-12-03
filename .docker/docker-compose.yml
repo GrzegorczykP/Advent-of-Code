@@ -5,6 +5,8 @@ services:
     build:
       dockerfile: dockerfile
       context: .
+    environment:
+      PHP_IDE_CONFIG: serverName=AoC-docker
     tty: true
     volumes:
       - ../:/app
