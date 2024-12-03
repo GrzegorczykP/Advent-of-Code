@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App2024\Assignments;
 
-use Illuminate\Support\Str;
-
 final class Day3 extends \App2024\BaseAssignment
 {
     public function __construct(bool $isTest = false, int $day = 3)
@@ -28,32 +26,24 @@ final class Day3 extends \App2024\BaseAssignment
 
     private function run1(): int|string
     {
-        return Str::of($this->inputData)
-            ->matchAll('/mul\((\d+,\d+)\)/')
-            ->sum(function (string $v) {
-                $params = explode(',', $v);
-                return $params[0] * $params[1];
-            });
+        preg_match_all('/mul\((\d+),(\d+)\)/', $this->inputData, $matches);
+
+        return array_sum(array_map(fn (int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
     }
 
     private function run2(): int|string
     {
         $parts = explode("don't()", $this->inputData);
+        $res = [$parts[0]];
 
-        $res = [array_shift($parts)];
-
-        foreach ($parts as $part) {
-            $exploded = explode('do()', $part, 2);
-            if (isset($exploded[1])) {
-                $res[] = $exploded[1];
+        foreach (array_slice($parts, 1) as $part) {
+            if (($pos = strpos($part, 'do()')) !== false) {
+                $res[] = substr($part, $pos);
             }
         }
 
-        return Str::of(implode('', $res))
-            ->matchAll('/mul\((\d+,\d+)\)/')
-            ->sum(function (string $v) {
-                $params = explode(',', $v);
-                return $params[0] * $params[1];
-            });
+        preg_match_all('/mul\((\d+),(\d+)\)/', implode('', $res), $matches);
+
+        return array_sum(array_map(fn (int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
     }
 }
