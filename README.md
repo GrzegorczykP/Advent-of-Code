@@ -37,7 +37,7 @@ https://adventofcode.com/
         <td>PHP</td>
         <td> * * </td>
         <td> * * </td>
-        <td>  </td>
+        <td> * * </td>
         <td>  </td>
         <td>  </td>
         <td>  </td>
