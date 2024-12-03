@@ -18,7 +18,6 @@
   "require": {
     "php": "^8.4",
     "ext-curl": "*",
-    "illuminate/collections": "^11.34",
     "illuminate/support": "^11.34"
   },
   "require-dev": {
