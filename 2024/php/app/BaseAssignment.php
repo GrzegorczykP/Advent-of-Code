@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App2024;
 
 use Illuminate\Support\Collection;
@@ -28,10 +30,13 @@ abstract class BaseAssignment
     {
         $extension = $this->isTest ? '/test' : '/input';
 
-        $this->inputData = file_get_contents($this->basePath . str_pad($this->day, 2, '0', STR_PAD_LEFT) . $extension);
+        $this->inputData = file_get_contents($this->basePath . str_pad((string)$this->day, 2, '0', STR_PAD_LEFT) . $extension);
     }
 
     abstract public function parseInput(string $input): ?Collection;
 
+    /**
+     * @return array{0: int|string, 1: int|string}
+     */
     abstract public function run(): array;
 }

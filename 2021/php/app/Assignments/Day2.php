@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App2021\Assignments;
 
 use App2021\BaseAssignment;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App2023\Assignments;
 
 use Illuminate\Support\Arr;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App2021\Assignments;
 
 use App2021\BaseAssignment;
@@ -24,7 +26,7 @@ final class Day7 extends BaseAssignment
 
     private function run1(): int
     {
-        $median = round($this->getMedian());
+        $median = (int)round($this->getMedian());
 
         return $this->calcCost($median);
     }
@@ -63,7 +65,7 @@ final class Day7 extends BaseAssignment
 
     private function run2(): int
     {
-        $average = floor($this->getAverage());
+        $average = (int)floor($this->getAverage());
 
         return min([
             $this->calcCost($average, false),
