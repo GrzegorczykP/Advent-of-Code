@@ -91,15 +91,12 @@ final class Day4 extends \App2024\BaseAssignment
         }
 
         $wordLength = strlen($word);
-        $rows = count($matrix);
-        $cols = count($matrix[0]);
 
-        for ($i = 0; $i < $wordLength; $i++) {
+        for ($i = 1; $i < $wordLength; $i++) {
             $row = $startRow + $i * $direction[0];
             $col = $startCol + $i * $direction[1];
-            
-            if ($row < 0 || $row >= $rows || $col < 0 || $col >= $cols || 
-                $matrix[$row][$col] !== $word[$i]) {
+
+            if (($matrix[$row][$col] ?? null) !== $word[$i]) {
                 return false;
             }
         }
