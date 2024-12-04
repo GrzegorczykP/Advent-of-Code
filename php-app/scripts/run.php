@@ -3,7 +3,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 if ($argc < 2) {
     die("Usage: php run.php <class_name|year/day> [--test]\n");

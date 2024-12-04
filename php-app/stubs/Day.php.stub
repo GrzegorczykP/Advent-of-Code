@@ -1,0 +1,38 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App{YEAR}\Assignments;
+
+use Illuminate\Support\Collection;
+
+final class Day{DAY} extends \App{YEAR}\BaseAssignment
+{
+    public function __construct(bool $isTest = false, int $day = {DAY})
+    {
+        parent::__construct($isTest, $day);
+    }
+
+    public function parseInput(string $input): ?Collection
+    {
+        return null;
+    }
+
+    public function run(): array
+    {
+        return [
+            $this->run1(),
+            $this->run2(),
+        ];
+    }
+
+    private function run1(): int|string
+    {
+        return 0;
+    }
+
+    private function run2(): int|string
+    {
+        return 0;
+    }
+}

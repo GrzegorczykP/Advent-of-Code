@@ -42,6 +42,15 @@
   "scripts": {
     "cs": "php-cs-fixer fix --config .php-cs-fixer.dist.php --dry-run --diff",
     "cs:fix": "php-cs-fixer fix --config .php-cs-fixer.dist.php",
-    "test": "vendor/bin/phpunit -c ./phpunit.xml"
+    "test": "vendor/bin/phpunit -c ./phpunit.xml",
+    "solve": "scripts/run.php",
+    "generate": "scripts/generate-day.php"
+  },
+  "scripts-descriptions": {
+    "cs": "Check code style using PHP CS Fixer",
+    "cs:fix": "Fix code style using PHP CS Fixer",
+    "test": "Run PHPUnit tests",
+    "solve": "Run solution for specific day (usage: composer solve -- <year>/<day>)",
+    "generate": "Generate scaffold for new day (usage: composer generate -- <year>/<day>)"
   }
 }
