@@ -29,4 +29,7 @@ RUN set -eux \
     # Cleanup
     && apk del .build-deps
 
+ENV PHP_IDE_CONFIG serverName=AoC-docker
+ENV PHP_CS_FIXER_IGNORE_ENV 1
+
 WORKDIR /app
