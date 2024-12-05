@@ -7,10 +7,14 @@ namespace App2024\Assignments;
 use Illuminate\Support\Collection;
 
 /**
- * @property Collection{
- *     rules:Collection<int, Collection<int>>,
- *     updates:array<int>
+ * @property-read Collection{
+ *     rules: Collection<int, Collection<int>>,
+ *     updates: array<int, int[]>
  * } $parsedData
+ * @property-read array{
+ *     rules: array<int, int[]>,
+ *     updates: array<int, int[]>
+ * } $parsedDataArray
  */
 final class Day5 extends \App2024\BaseAssignment
 {
@@ -43,16 +47,34 @@ final class Day5 extends \App2024\BaseAssignment
         ];
     }
 
-    private function run1(): int|string
+    private function run1(): int
     {
-        return $this->parsedData['updates']
-            ->filter(fn (array $update): bool => $this->isCorrectOrder($update))
-            ->sum(fn (array $update): int => $update[(int)floor(count($update) / 2)]);
+        $sum = 0;
+        foreach ($this->parsedDataArray['updates'] as $update) {
+            if ($this->isCorrectOrder($update)) {
+                $sum += $this->arrayMiddleElement($update);
+            }
+        }
+
+        return $sum;
     }
 
-    private function run2(): int|string
+    private function run2(): int
     {
-        return 0;
+        $sum = 0;
+        foreach ($this->parsedDataArray['updates'] as $update) {
+            if (!$this->isCorrectOrder($update)) {
+                $update = $this->fixOrder($update);
+                $sum += $this->arrayMiddleElement($update);
+            }
+        }
+
+        return $sum;
+    }
+
+    private function arrayMiddleElement(array $array): mixed
+    {
+        return $array[(int)floor(count($array) / 2)];
     }
 
     private function isCorrectOrder(array $updates): bool
@@ -62,8 +84,21 @@ final class Day5 extends \App2024\BaseAssignment
         }
 
         $first = array_shift($updates);
-        $diff = array_diff($updates, $this->parsedData['rules']->get($first)?->all() ?? []);
+        $diff = array_diff($updates, $this->parsedDataArray['rules'][$first] ?? []);
 
         return empty($diff) && $this->isCorrectOrder($updates);
+    }
+
+    private function fixOrder(array $update): array
+    {
+        $possibleWaysCount = [];
+        foreach ($update as $page) {
+            $intersect = array_intersect($this->parsedDataArray['rules'][$page] ?? [], $update);
+            $possibleWaysCount[$page] = count($intersect);
+        }
+
+        asort($possibleWaysCount);
+
+        return array_keys($possibleWaysCount);
     }
 }

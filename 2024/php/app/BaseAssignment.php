@@ -14,9 +14,11 @@ abstract class BaseAssignment
 
     private bool $isTest;
 
-    protected string $inputData;
+    protected readonly string $inputData;
 
     protected readonly ?Collection $parsedData;
+
+    protected readonly ?array $parsedDataArray;
 
     public function __construct(bool $isTest = false, int $day = 0)
     {
@@ -24,9 +26,10 @@ abstract class BaseAssignment
         $this->isTest = $isTest;
         $this->loadData();
         $this->parsedData = $this->parseInput($this->inputData);
+        $this->parsedDataArray = $this->parsedData?->toArray();
     }
 
-    protected function loadData(): void
+    private function loadData(): void
     {
         $extension = $this->isTest ? '/test' : '/input';
 
