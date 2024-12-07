@@ -70,6 +70,7 @@ final class Day6 extends \App2024\BaseAssignment
                 }
                 $changedMap = $this->parsedDataArray['map'];
                 $changedMap[$i][$j] = '#';
+
                 try {
                     $this->exploreMap($changedMap);
                 } catch (\Exception $e) {
