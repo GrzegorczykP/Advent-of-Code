@@ -22,19 +22,19 @@ final class Day2 extends \App2024\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int|string
+    private function part1(): int
     {
         return $this->parsedData
             ->filter(fn (Collection $v): bool => $this->isValidRoute($v))
             ->count();
     }
 
-    private function run2(): int|string
+    private function part2(): int
     {
         return $this->parsedData
             ->filter(function (Collection $route): bool {

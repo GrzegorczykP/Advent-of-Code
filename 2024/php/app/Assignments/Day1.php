@@ -35,12 +35,12 @@ final class Day1 extends \App2024\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int|string
+    private function part1(): int
     {
         $leftSorted = $this->parsedData['left']->sort()->values();
         $rightSorted = $this->parsedData['right']->sort()->values();
@@ -49,7 +49,7 @@ final class Day1 extends \App2024\BaseAssignment
             ->reduce(fn (int $sum, int $v, int $i): int => $sum + abs($v - $rightSorted[$i]), 0);
     }
 
-    private function run2(): int|string
+    private function part2(): int
     {
         $countLeft = $this->parsedData['left']->countBy();
         $countRight = $this->parsedData['right']

@@ -45,19 +45,19 @@ final class Day6 extends \App2024\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int
+    private function part1(): int
     {
         $traversedMap = $this->exploreMap($this->parsedDataArray['map']);
 
         return substr_count(implode(array_map('implode', $traversedMap)), 'o');
     }
 
-    private function run2(): int
+    private function part2(): int
     {
         $loopCount = 0;
 

@@ -22,12 +22,12 @@ final class Day4 extends \App2024\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int|string
+    private function part1(): int
     {
         $matrix = $this->parsedData->all();
         $rows = count($matrix);
@@ -54,7 +54,7 @@ final class Day4 extends \App2024\BaseAssignment
         return $count;
     }
 
-    private function run2(): int|string
+    private function part2(): int
     {
         $matrix = $this->parsedData->all();
         $rows = count($matrix);

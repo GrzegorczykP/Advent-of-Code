@@ -42,12 +42,12 @@ final class Day5 extends \App2024\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int
+    private function part1(): int
     {
         $sum = 0;
         foreach ($this->parsedDataArray['updates'] as $update) {
@@ -59,7 +59,7 @@ final class Day5 extends \App2024\BaseAssignment
         return $sum;
     }
 
-    private function run2(): int
+    private function part2(): int
     {
         $sum = 0;
         foreach ($this->parsedDataArray['updates'] as $update) {

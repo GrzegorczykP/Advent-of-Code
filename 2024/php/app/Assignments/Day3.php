@@ -19,19 +19,19 @@ final class Day3 extends \App2024\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int|string
+    private function part1(): int
     {
         preg_match_all('/mul\((\d+),(\d+)\)/', $this->inputData, $matches);
 
         return array_sum(array_map(fn (int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
     }
 
-    private function run2(): int|string
+    private function part2(): int
     {
         $parts = explode("don't()", $this->inputData);
         $res = [$parts[0]];
