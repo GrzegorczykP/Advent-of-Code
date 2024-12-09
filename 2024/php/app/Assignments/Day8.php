@@ -29,12 +29,12 @@ final class Day8 extends \App2024\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int|string
+    private function part1(): int|string
     {
         $uniqueFrequencies = $this->parsedDataArray['frequencies'];
 
@@ -46,7 +46,7 @@ final class Day8 extends \App2024\BaseAssignment
         return count($allUniqueAntiNodes);
     }
 
-    private function run2(): int|string
+    private function part2(): int|string
     {
         $uniqueFrequencies = $this->parsedDataArray['frequencies'];
 

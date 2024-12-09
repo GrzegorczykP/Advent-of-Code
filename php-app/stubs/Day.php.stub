@@ -21,17 +21,17 @@ final class Day{DAY} extends \App{YEAR}\BaseAssignment
     public function run(): array
     {
         return [
-            $this->run1(),
-            $this->run2(),
+            $this->part1(),
+            $this->part2(),
         ];
     }
 
-    private function run1(): int|string
+    private function part1(): int|string
     {
         return 0;
     }
 
-    private function run2(): int|string
+    private function part2(): int|string
     {
         return 0;
     }
