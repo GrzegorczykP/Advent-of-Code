@@ -18,10 +18,7 @@ use Illuminate\Support\Collection;
  */
 final class Day5 extends \App2024\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = 5)
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = 5;
 
     public function parseInput(string $input): Collection
     {
@@ -39,15 +36,7 @@ final class Day5 extends \App2024\BaseAssignment
         ]);
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int
+    protected function part1(): int
     {
         $sum = 0;
         foreach ($this->parsedDataArray['updates'] as $update) {
@@ -59,7 +48,7 @@ final class Day5 extends \App2024\BaseAssignment
         return $sum;
     }
 
-    private function part2(): int
+    protected function part2(): int
     {
         $sum = 0;
         foreach ($this->parsedDataArray['updates'] as $update) {

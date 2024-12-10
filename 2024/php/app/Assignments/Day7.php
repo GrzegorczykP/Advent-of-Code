@@ -8,12 +8,9 @@ use Illuminate\Support\Collection;
 
 final class Day7 extends \App2024\BaseAssignment
 {
-    private array $operatorsCache = [];
+    protected int $day = 7;
 
-    public function __construct(bool $isTest = false, int $day = 7)
-    {
-        parent::__construct($isTest, $day);
-    }
+    private array $operatorsCache = [];
 
     public function parseInput(string $input): ?Collection
     {
@@ -28,22 +25,14 @@ final class Day7 extends \App2024\BaseAssignment
             });
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int
+    protected function part1(): int
     {
         return $this->parsedData
             ->filter(fn (array $data): bool => $this->isCorrectExpression($data['value'], $data['numbers'], ['+', '*']))
             ->sum('value');
     }
 
-    private function part2(): int
+    protected function part2(): int
     {
         return $this->parsedData
             ->filter(fn (array $data): bool => $this->isCorrectExpression($data['value'], $data['numbers'], ['+', '*', '||']))

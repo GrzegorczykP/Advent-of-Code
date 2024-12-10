@@ -8,10 +8,7 @@ use Illuminate\Support\Collection;
 
 final class Day2 extends \App2024\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = 2)
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = 2;
 
     public function parseInput(string $input): Collection
     {
@@ -19,22 +16,14 @@ final class Day2 extends \App2024\BaseAssignment
             ->map(fn (string $v): Collection => collect(explode(' ', $v))->map(fn ($v) => (int)$v));
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int
+    protected function part1(): int
     {
         return $this->parsedData
             ->filter(fn (Collection $v): bool => $this->isValidRoute($v))
             ->count();
     }
 
-    private function part2(): int
+    protected function part2(): int
     {
         return $this->parsedData
             ->filter(function (Collection $route): bool {

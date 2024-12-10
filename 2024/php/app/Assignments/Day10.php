@@ -9,17 +9,14 @@ use Illuminate\Support\Str;
 
 final class Day10 extends \App2024\BaseAssignment
 {
+    protected int $day = 10;
+
     private const array MOVE_DIRECTIONS = [
         'Up' => [0, -1],
         'Down' => [0, 1],
         'Left' => [-1, 0],
         'Right' => [1, 0],
     ];
-
-    public function __construct(bool $isTest = false, int $day = 10)
-    {
-        parent::__construct($isTest, $day);
-    }
 
     public function parseInput(string $input): Collection
     {
@@ -34,15 +31,7 @@ final class Day10 extends \App2024\BaseAssignment
         ]);
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int
+    protected function part1(): int
     {
         $reachedTops = 0;
         foreach ($this->parsedDataArray['map'] as $y => $row) {
@@ -56,7 +45,7 @@ final class Day10 extends \App2024\BaseAssignment
         return $reachedTops;
     }
 
-    private function part2(): int|string
+    protected function part2(): int|string
     {
         $reachedTops = 0;
         foreach ($this->parsedDataArray['map'] as $y => $row) {

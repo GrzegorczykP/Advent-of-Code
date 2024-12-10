@@ -11,10 +11,7 @@ use Illuminate\Support\Collection;
  */
 final class Day1 extends \App2024\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = 1)
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = 1;
 
     public function parseInput(string $input): Collection
     {
@@ -32,15 +29,7 @@ final class Day1 extends \App2024\BaseAssignment
         return collect(compact('left', 'right'));
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int
+    protected function part1(): int
     {
         $leftSorted = $this->parsedData['left']->sort()->values();
         $rightSorted = $this->parsedData['right']->sort()->values();
@@ -49,7 +38,7 @@ final class Day1 extends \App2024\BaseAssignment
             ->reduce(fn (int $sum, int $v, int $i): int => $sum + abs($v - $rightSorted[$i]), 0);
     }
 
-    private function part2(): int
+    protected function part2(): int
     {
         $countLeft = $this->parsedData['left']->countBy();
         $countRight = $this->parsedData['right']

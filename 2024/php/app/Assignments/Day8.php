@@ -8,10 +8,7 @@ use Illuminate\Support\Collection;
 
 final class Day8 extends \App2024\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = 8)
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = 8;
 
     public function parseInput(string $input): Collection
     {
@@ -26,15 +23,7 @@ final class Day8 extends \App2024\BaseAssignment
         ]);
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int|string
+    protected function part1(): int|string
     {
         $uniqueFrequencies = $this->parsedDataArray['frequencies'];
 
@@ -46,7 +35,7 @@ final class Day8 extends \App2024\BaseAssignment
         return count($allUniqueAntiNodes);
     }
 
-    private function part2(): int|string
+    protected function part2(): int|string
     {
         $uniqueFrequencies = $this->parsedDataArray['frequencies'];
 

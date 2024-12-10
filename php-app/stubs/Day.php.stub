@@ -8,30 +8,14 @@ use Illuminate\Support\Collection;
 
 final class Day{DAY} extends \App{YEAR}\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = {DAY})
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = {DAY};
 
-    public function parseInput(string $input): ?Collection
-    {
-        return null;
-    }
-
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int|string
+    protected function part1(): int|string
     {
         return 0;
     }
 
-    private function part2(): int|string
+    protected function part2(): int|string
     {
         return 0;
     }

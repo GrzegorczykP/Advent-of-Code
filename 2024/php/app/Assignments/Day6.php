@@ -8,10 +8,7 @@ use Illuminate\Support\Collection;
 
 final class Day6 extends \App2024\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = 6)
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = 6;
 
     public function parseInput(string $input): Collection
     {
@@ -42,22 +39,14 @@ final class Day6 extends \App2024\BaseAssignment
         ]);
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int
+    protected function part1(): int
     {
         $traversedMap = $this->exploreMap($this->parsedDataArray['map']);
 
         return substr_count(implode(array_map('implode', $traversedMap)), 'o');
     }
 
-    private function part2(): int
+    protected function part2(): int
     {
         $loopCount = 0;
 

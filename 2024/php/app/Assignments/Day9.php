@@ -13,10 +13,7 @@ use Illuminate\Support\Collection;
  */
 final class Day9 extends \App2024\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = 9)
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = 9;
 
     public function parseInput(string $input): Collection
     {
@@ -33,20 +30,12 @@ final class Day9 extends \App2024\BaseAssignment
         return collect($files);
     }
 
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int|string
+    protected function part1(): int|string
     {
         return $this->calculateDiskChecksum();
     }
 
-    private function part2(): int|string
+    protected function part2(): int|string
     {
         return $this->calculateDiskChecksumPart2();
     }

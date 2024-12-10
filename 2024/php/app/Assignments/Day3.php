@@ -6,32 +6,16 @@ namespace App2024\Assignments;
 
 final class Day3 extends \App2024\BaseAssignment
 {
-    public function __construct(bool $isTest = false, int $day = 3)
-    {
-        parent::__construct($isTest, $day);
-    }
+    protected int $day = 3;
 
-    public function parseInput(string $input): null
-    {
-        return null;
-    }
-
-    public function run(): array
-    {
-        return [
-            $this->part1(),
-            $this->part2(),
-        ];
-    }
-
-    private function part1(): int
+    protected function part1(): int
     {
         preg_match_all('/mul\((\d+),(\d+)\)/', $this->inputData, $matches);
 
         return array_sum(array_map(fn (int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
     }
 
-    private function part2(): int
+    protected function part2(): int
     {
         $parts = explode("don't()", $this->inputData);
         $res = [$parts[0]];
