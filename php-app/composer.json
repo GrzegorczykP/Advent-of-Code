@@ -1,10 +1,11 @@
 {
   "name": "grzegorczykp/aoc-php",
   "description": "PHP app to resolve Advent of Code tasks",
-  "license": "proprietary",
+  "license": "MIT",
+  "minimum-stability": "stable",
   "authors": [
     {
-      "name": "Paweł Grzegorczyk"
+      "name": "Grzegorczyk Paweł"
     }
   ],
   "config": {
@@ -18,11 +19,11 @@
   "require": {
     "php": "^8.4",
     "ext-curl": "*",
-    "illuminate/support": "^11.34"
+    "illuminate/support": "^11.35"
   },
   "require-dev": {
     "symfony/var-dumper": "^7.2",
-    "phpunit/phpunit": "^11.4",
+    "phpunit/phpunit": "^11.5",
     "roave/security-advisories": "dev-latest",
     "friendsofphp/php-cs-fixer": "^3.65"
   },
