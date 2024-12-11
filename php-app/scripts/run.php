@@ -33,6 +33,7 @@ try {
     echo PHP_EOL;
     echo str_repeat('=', 80) . PHP_EOL;
     echo "Stats:" . PHP_EOL;
+    echo str_repeat('=', 80) . PHP_EOL;
     echo PHP_EOL;
     foreach ($stats as $label => $value) {
         echo sprintf("%s: %s %s", $label, $value['timeFormatted'], $value['memoryPeakFormatted']) . PHP_EOL;
