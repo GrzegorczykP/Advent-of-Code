@@ -29,12 +29,12 @@ final class Day6 extends \App2022\BaseAssignment
     private function run1(): int
     {
         return $this->parsedData->sliding(4)
-                ->search(fn (Collection $v) => $v->unique()->count() === 4) + 4;
+                ->search(fn(Collection $v) => $v->unique()->count() === 4) + 4;
     }
 
     private function run2(): int
     {
         return $this->parsedData->sliding(14)
-                ->search(fn (Collection $v) => $v->unique()->count() === 14) + 14;
+                ->search(fn(Collection $v) => $v->unique()->count() === 14) + 14;
     }
 }

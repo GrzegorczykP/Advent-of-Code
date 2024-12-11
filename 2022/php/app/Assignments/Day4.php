@@ -17,9 +17,9 @@ final class Day4 extends \App2022\BaseAssignment
     {
         return collect(explode(PHP_EOL, $input))
             ->map(
-                fn (string $v): Collection => collect(explode(',', $v))
-                    ->map(fn (string $v): Collection => collect(explode('-', $v))->map(fn ($v) => (int)$v))
-                    ->map(fn ($v) => range($v[0], $v[1]))
+                fn(string $v): Collection => collect(explode(',', $v))
+                    ->map(fn(string $v): Collection => collect(explode('-', $v))->map(fn($v) => (int) $v))
+                    ->map(fn($v) => range($v[0], $v[1]))
             );
     }
 
@@ -46,7 +46,7 @@ final class Day4 extends \App2022\BaseAssignment
     private function run2(): int
     {
         return $this->parsedData
-            ->filter(fn ($row) => count(array_intersect($row[0], $row[1])) > 0)
+            ->filter(fn($row) => count(array_intersect($row[0], $row[1])) > 0)
             ->count();
     }
 }

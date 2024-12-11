@@ -20,7 +20,7 @@ final class Day2 extends \App2023\BaseAssignment
                 preg_match('/Game (?<ID>\d+): (?<sets>.+)/', $line, $matches);
                 $sets = explode('; ', $matches['sets']);
                 $out = [
-                    'ID' => (int)$matches['ID'],
+                    'ID' => (int) $matches['ID'],
                     'sets' => [],
                 ];
                 foreach ($sets as $key => $set) {
@@ -31,7 +31,7 @@ final class Day2 extends \App2023\BaseAssignment
                     ];
                     preg_match_all('/(?<number>\d+) (?<color>\w+)/', $set, $matches, PREG_SET_ORDER);
                     foreach ($matches as $match) {
-                        $out['sets'][$key][$match['color']] = (int)$match['number'];
+                        $out['sets'][$key][$match['color']] = (int) $match['number'];
                     }
                 }
 

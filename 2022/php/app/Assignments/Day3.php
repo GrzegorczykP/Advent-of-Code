@@ -50,7 +50,7 @@ final class Day3 extends BaseAssignment
                 return $split->chunk($halfIndex);
             })
             ->reduce(
-                fn (int $sum, Collection $v): int => $sum + $priorityMap[$v[0]->intersect($v[1])->first()],
+                fn(int $sum, Collection $v): int => $sum + $priorityMap[$v[0]->intersect($v[1])->first()],
                 0
             );
     }
@@ -60,7 +60,7 @@ final class Day3 extends BaseAssignment
         $priorityMap = $this->getPriorityMap();
 
         return $this->parsedData
-            ->map(fn ($row) => str_split($row))
+            ->map(fn($row) => str_split($row))
             ->chunk(3)
             ->reduce(
                 function (int $sum, Collection $v) use ($priorityMap): int {

@@ -17,7 +17,7 @@ final class Day1 extends \App2022\BaseAssignment
     {
         return collect(
             array_map(
-                static fn (string $v): array => array_map('intval', explode(PHP_EOL, $v)),
+                static fn(string $v): array => array_map('intval', explode(PHP_EOL, $v)),
                 explode(PHP_EOL . PHP_EOL, $input)
             )
         );
@@ -34,14 +34,14 @@ final class Day1 extends \App2022\BaseAssignment
     private function run1(): int
     {
         return $this->parsedData
-            ->map(fn ($v) => array_sum($v))
+            ->map(fn($v) => array_sum($v))
             ->max();
     }
 
     private function run2(): int
     {
         return $this->parsedData
-            ->map(fn ($v) => array_sum($v))
+            ->map(fn($v) => array_sum($v))
             ->sortDesc()
             ->take(3)
             ->sum();

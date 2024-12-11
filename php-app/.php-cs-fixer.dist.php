@@ -16,12 +16,16 @@ $finder = PhpCsFixer\Finder::create()
 $config = new PhpCsFixer\Config();
 return $config->setRules([
         '@PSR12' => true,
-        'array_syntax' => ['syntax' => 'short'],
+        '@PSR12:risky' => true,
+        '@PER-CS' => true,
+        '@PER-CS:risky' => true,
         'strict_param' => true,
         'declare_strict_types' => true,
         'ordered_imports' => ['sort_algorithm' => 'alpha'],
         'no_unused_imports' => true,
-        'trailing_comma_in_multiline' => true,
+        'trailing_comma_in_multiline' => [
+            'elements' => ['array_destructuring', 'arrays', 'match'],
+        ],
         'phpdoc_scalar' => true,
         'unary_operator_spaces' => true,
         'binary_operator_spaces' => true,
@@ -30,12 +34,7 @@ return $config->setRules([
         ],
         'phpdoc_single_line_var_spacing' => true,
         'phpdoc_var_without_name' => true,
-        'class_attributes_separation' => [
-            'elements' => [
-                'method' => 'one',
-                'property' => 'one',
-            ],
-        ],
+        'class_attributes_separation' => true,
         'method_argument_space' => [
             'on_multiline' => 'ensure_fully_multiline',
             'keep_multiple_spaces_after_comma' => true,

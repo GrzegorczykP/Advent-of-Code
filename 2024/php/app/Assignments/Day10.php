@@ -22,7 +22,7 @@ final class Day10 extends \App2024\BaseAssignment
     {
         $map = Str::of($input)
             ->explode(PHP_EOL)
-            ->map(fn (string $line): array => array_map('intval', str_split($line)));
+            ->map(fn(string $line): array => array_map('intval', str_split($line)));
 
         return collect([
             'map' => $map,

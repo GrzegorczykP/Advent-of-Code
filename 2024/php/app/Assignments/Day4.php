@@ -13,7 +13,7 @@ final class Day4 extends \App2024\BaseAssignment
     public function parseInput(string $input): Collection
     {
         return collect(explode(PHP_EOL, $input))
-            ->map(fn (string $line): array => str_split($line));
+            ->map(fn(string $line): array => str_split($line));
     }
 
     protected function part1(): int

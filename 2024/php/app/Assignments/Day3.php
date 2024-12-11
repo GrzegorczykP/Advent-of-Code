@@ -12,7 +12,7 @@ final class Day3 extends \App2024\BaseAssignment
     {
         preg_match_all('/mul\((\d+),(\d+)\)/', $this->inputData, $matches);
 
-        return array_sum(array_map(fn (int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
+        return array_sum(array_map(fn(int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
     }
 
     protected function part2(): int
@@ -28,6 +28,6 @@ final class Day3 extends \App2024\BaseAssignment
 
         preg_match_all('/mul\((\d+),(\d+)\)/', implode('', $res), $matches);
 
-        return array_sum(array_map(fn (int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
+        return array_sum(array_map(fn(int $a, int $b): int => $a * $b, $matches[1], $matches[2]));
     }
 }

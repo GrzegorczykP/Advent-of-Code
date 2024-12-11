@@ -29,10 +29,10 @@ final class Day5 extends \App2024\BaseAssignment
                 ->mapToGroups(function (string $rule): array {
                     [$previous, $next] = explode('|', $rule);
 
-                    return [(int)$previous => (int)$next];
+                    return [(int) $previous => (int) $next];
                 }),
             'updates' => collect(explode(PHP_EOL, $updates))
-                ->map(fn (string $update): array => array_map('intval', explode(',', $update))),
+                ->map(fn(string $update): array => array_map('intval', explode(',', $update))),
         ]);
     }
 
@@ -63,7 +63,7 @@ final class Day5 extends \App2024\BaseAssignment
 
     private function arrayMiddleElement(array $array): mixed
     {
-        return $array[(int)floor(count($array) / 2)];
+        return $array[(int) floor(count($array) / 2)];
     }
 
     private function isCorrectOrder(array $updates): bool

@@ -26,7 +26,7 @@ final class Day7 extends BaseAssignment
 
     private function run1(): int
     {
-        $median = (int)round($this->getMedian());
+        $median = (int) round($this->getMedian());
 
         return $this->calcCost($median);
     }
@@ -65,7 +65,7 @@ final class Day7 extends BaseAssignment
 
     private function run2(): int
     {
-        $average = (int)floor($this->getAverage());
+        $average = (int) floor($this->getAverage());
 
         return min([
             $this->calcCost($average, false),

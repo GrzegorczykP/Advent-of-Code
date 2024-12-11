@@ -13,7 +13,7 @@ final class Day8 extends \App2024\BaseAssignment
     public function parseInput(string $input): Collection
     {
         $map = collect(explode(PHP_EOL, $input))
-            ->map(fn (string $line): array => str_split($line))
+            ->map(fn(string $line): array => str_split($line))
             ->all();
 
         return collect([

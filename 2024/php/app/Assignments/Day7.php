@@ -28,14 +28,14 @@ final class Day7 extends \App2024\BaseAssignment
     protected function part1(): int
     {
         return $this->parsedData
-            ->filter(fn (array $data): bool => $this->isCorrectExpression($data['value'], $data['numbers'], ['+', '*']))
+            ->filter(fn(array $data): bool => $this->isCorrectExpression($data['value'], $data['numbers'], ['+', '*']))
             ->sum('value');
     }
 
     protected function part2(): int
     {
         return $this->parsedData
-            ->filter(fn (array $data): bool => $this->isCorrectExpression($data['value'], $data['numbers'], ['+', '*', '||']))
+            ->filter(fn(array $data): bool => $this->isCorrectExpression($data['value'], $data['numbers'], ['+', '*', '||']))
             ->sum('value');
     }
 
@@ -53,7 +53,7 @@ final class Day7 extends \App2024\BaseAssignment
             return $this->operatorsCache[$cacheKey];
         }
 
-        $combinations = array_map(fn ($op) => [$op], $operators);
+        $combinations = array_map(fn($op) => [$op], $operators);
 
         for ($currentSize = 1; $currentSize < $size; $currentSize++) {
             $newCombinations = [];
@@ -79,7 +79,7 @@ final class Day7 extends \App2024\BaseAssignment
             $result = match ($operator) {
                 '+' => $result + $numbers[$index + 1],
                 '*' => $result * $numbers[$index + 1],
-                '||' => (int)($result . $numbers[$index + 1]),
+                '||' => (int) ($result . $numbers[$index + 1]),
             };
         }
 

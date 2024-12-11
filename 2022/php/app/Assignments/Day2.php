@@ -17,7 +17,7 @@ final class Day2 extends BaseAssignment
     public function parseInput(string $input): Collection
     {
         return collect(explode("\n", $input))
-            ->map(fn ($row) => explode(' ', $row));
+            ->map(fn($row) => explode(' ', $row));
     }
 
     public function run(): array
@@ -48,7 +48,7 @@ final class Day2 extends BaseAssignment
             ],
         ];
 
-        return $this->parsedData->reduce(fn (int $s, array $v): int => $s + $scoreMap[$v[0]][$v[1]], 0);
+        return $this->parsedData->reduce(fn(int $s, array $v): int => $s + $scoreMap[$v[0]][$v[1]], 0);
     }
 
     private function run2(): int
@@ -71,6 +71,6 @@ final class Day2 extends BaseAssignment
             ],
         ];
 
-        return $this->parsedData->reduce(fn (int $s, array $v): int => $s + $scoreMap[$v[0]][$v[1]], 0);
+        return $this->parsedData->reduce(fn(int $s, array $v): int => $s + $scoreMap[$v[0]][$v[1]], 0);
     }
 }

@@ -27,7 +27,7 @@ final class Day7 extends BaseAssignment
                             'root/' :
                             substr($path, 0, strrpos($path, '/', -1) - 1)
                         ),
-                        default => $path . $tok[2] . '/'
+                        default => $path . $tok[2] . '/',
                     };
                 }
             } elseif ($tok[0] !== 'dir') {
@@ -63,7 +63,7 @@ final class Day7 extends BaseAssignment
 
     private function run1(): int
     {
-        return $this->parsedData->where(fn ($v) => $v < 100000)->sum();
+        return $this->parsedData->where(fn($v) => $v < 100000)->sum();
     }
 
     private function run2(): int
@@ -72,6 +72,6 @@ final class Day7 extends BaseAssignment
 
         return $this->parsedData
             ->sort()
-            ->first(fn ($v) => $availSpace + $v >= 30_000_000);
+            ->first(fn($v) => $availSpace + $v >= 30_000_000);
     }
 }

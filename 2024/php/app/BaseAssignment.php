@@ -23,10 +23,9 @@ abstract class BaseAssignment
     public function __construct(private readonly bool $isTest = false)
     {
         $this->basePath = dirname(__DIR__, 2) . '/data/';
-        if (!isset($this->day))
-        {
+        if (!isset($this->day)) {
             preg_match('/Day(\d+)/', static::class, $matches);
-            $this->day = (int)$matches[1];
+            $this->day = (int) $matches[1];
         }
         $this->benchamrk(fn() => $this->loadData(), 'loadData');
         $this->parsedData = $this->benchamrk(fn() => $this->parseInput($this->inputData), 'parseInput');
@@ -70,7 +69,7 @@ abstract class BaseAssignment
     {
         $extension = $this->isTest ? '/test' : '/input';
 
-        $this->inputData = file_get_contents($this->basePath . str_pad((string)$this->day, 2, '0', STR_PAD_LEFT) . $extension);
+        $this->inputData = file_get_contents($this->basePath . str_pad((string) $this->day, 2, '0', STR_PAD_LEFT) . $extension);
     }
 
     protected function parseInput(string $input): ?Collection
@@ -88,7 +87,7 @@ abstract class BaseAssignment
 
         return [
             $part1,
-            $part2
+            $part2,
         ];
     }
 

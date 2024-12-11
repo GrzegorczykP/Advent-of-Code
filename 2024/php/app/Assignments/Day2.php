@@ -13,13 +13,13 @@ final class Day2 extends \App2024\BaseAssignment
     public function parseInput(string $input): Collection
     {
         return collect(explode(PHP_EOL, $input))
-            ->map(fn (string $v): Collection => collect(explode(' ', $v))->map(fn ($v) => (int)$v));
+            ->map(fn(string $v): Collection => collect(explode(' ', $v))->map(fn($v) => (int) $v));
     }
 
     protected function part1(): int
     {
         return $this->parsedData
-            ->filter(fn (Collection $v): bool => $this->isValidRoute($v))
+            ->filter(fn(Collection $v): bool => $this->isValidRoute($v))
             ->count();
     }
 

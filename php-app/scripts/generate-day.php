@@ -14,10 +14,10 @@ if (!preg_match('#(?<year>\d{4})/(?<day>\d{1,2})#', $input, $matches)) {
     die("Invalid format. Use: YYYY/DD (e.g., 2024/5)\n");
 }
 
-$year = (int)$matches['year'];
-$day = (int)$matches['day'];
+$year = (int) $matches['year'];
+$day = (int) $matches['day'];
 
-$currentYear = (int)date('Y');
+$currentYear = (int) date('Y');
 if ($year < 2015 || $year > $currentYear) {
     die("Year must be between 2015 and $currentYear\n");
 }
@@ -80,7 +80,7 @@ if (!is_dir($testDir) && !mkdir($testDir, 0777, true)) {
 // Create year test file if it doesn't exist
 if (!file_exists($testFile)) {
     $yearTemplate = file_get_contents($yearTestStubPath);
-    $yearContent = str_replace('{YEAR}', (string)$year, $yearTemplate);
+    $yearContent = str_replace('{YEAR}', (string) $year, $yearTemplate);
     if (file_put_contents($testFile, $yearContent) === false) {
         die("Failed to create year test file: $testFile\n");
     }

@@ -22,7 +22,7 @@ final class Day3 extends \App2023\BaseAssignment
     {
         return [
             $this->run1(),
-//            $this->run2()
+            //            $this->run2()
         ];
     }
 

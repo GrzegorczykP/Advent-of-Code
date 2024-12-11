@@ -18,14 +18,14 @@ final class Day6 extends \App2024\BaseAssignment
         preg_match($directionRegex, $input, $matches, PREG_OFFSET_CAPTURE);
 
         [$direction, $offset] = $matches[0];
-        $row = (int)floor($offset / $lineLength);
+        $row = (int) floor($offset / $lineLength);
         $position = [
             $offset - $row * $lineLength,
             $row,
         ];
 
         $map = collect(explode(PHP_EOL, $input))
-            ->map(fn (string $line): array => str_split($line));
+            ->map(fn(string $line): array => str_split($line));
 
         return collect([
             'map' => $map,

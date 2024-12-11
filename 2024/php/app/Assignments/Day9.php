@@ -45,7 +45,7 @@ final class Day9 extends \App2024\BaseAssignment
         $diskMap = $this->inputData;
         $mapLength = strlen($diskMap);
         $leftFile = new File(0, 0, $diskMap);
-        $rightFile = new File((int)floor($mapLength / 2), $mapLength - 1, $diskMap);
+        $rightFile = new File((int) floor($mapLength / 2), $mapLength - 1, $diskMap);
 
         $checksum = 0;
         $finalIndex = 0;
