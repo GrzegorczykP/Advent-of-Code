@@ -8,5 +8,5 @@ services:
     tty: true
     volumes:
       - ../:/app
-      - ./php/php.ini:/usr/local/etc/php/conf.d/local.ini
-      - ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./php/php.ini:/usr/local/etc/php/conf.d/local.ini:ro
+      - ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini:ro
