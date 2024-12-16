@@ -139,4 +139,15 @@ final class Y2024 extends TestCase
         $this->assertArrayHasKey(1, $result);
         $this->assertEquals(1206, $result[1]);
     }
+
+    public function testDay13(): void
+    {
+        $assignment = new \App2024\Assignments\Day13(true);
+        $result = $assignment->run();
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey(0, $result);
+        $this->assertEquals(480, $result[0]);
+        $this->assertArrayHasKey(1, $result);
+        $this->assertEquals(875318608908, $result[1]);
+    }
 }
