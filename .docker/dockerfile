@@ -5,15 +5,23 @@ ARG COMPOSER_SUM="8323b4105c6e166d47c9db93209370083f9e421743636e108c37d8c1126386
 
 RUN set -eux \
 \
-    # Dependencies
-    && apk add --no-cache --virtual .build-deps \
-    $PHPIZE_DEPS \
-    binutils \
-    linux-headers \
+    ## Dependencies
+    # Persistent
+        && apk add --no-cache \
+            gmp \
+    # Build
+        && apk add --no-cache --virtual .build-deps \
+            $PHPIZE_DEPS \
+            binutils \
+            linux-headers \
+            gmp-dev \
 \
+    ## Extensions
+    # GMP
+        && docker-php-ext-install gmp \
     # Xdebug
-    && pecl install -o xdebug \
-    && docker-php-ext-enable xdebug \
+        && pecl install -o xdebug \
+        && docker-php-ext-enable xdebug \
 \
     # Composer
         && curl -LO "https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar" \

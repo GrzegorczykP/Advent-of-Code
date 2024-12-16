@@ -19,6 +19,7 @@
   "require": {
     "php": "^8.4",
     "ext-curl": "*",
+    "ext-gmp": "*",
     "illuminate/support": "^11.35"
   },
   "require-dev": {
