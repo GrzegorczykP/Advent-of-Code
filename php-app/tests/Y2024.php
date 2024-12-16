@@ -137,6 +137,6 @@ final class Y2024 extends TestCase
         $this->assertArrayHasKey(0, $result);
         $this->assertEquals(1930, $result[0]);
         $this->assertArrayHasKey(1, $result);
-        $this->assertEquals(0, $result[1]);
+        $this->assertEquals(1206, $result[1]);
     }
 }
